@@ -8,17 +8,23 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <div id="container-attemps">
+        <p>Intentos: <span id="displayAttemps"></span></p>
+    </div>
     <div id="container">
         <div class="container-number">
-            <span>?</span>
+            <span id="displayNumber">?</span>
         </div>
         <div class="container-content">
-            <h2>¿Cuál es el número?</h2>
+            <h2 id="title">¿Cuál es el número?</h2>
             <form>
-                <input type="text" name="" id="" placeholder="Ingresa el número"> 
-                <button>Enviar</button>
+                <input type="number" id="inputNumber" placeholder="Ingresa el número" autocomplete="off"> 
+                <button id="btnCheck">Enviar</button>
+                <button id="btnReset">Reintentar</button>
             </form>
         </div>
     </div>
+    <script src="assets/scripts/nodes.js"></script>
+    <script src="assets/scripts/index.js"></script>
 </body>
 </html>

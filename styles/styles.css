@@ -10,6 +10,14 @@ body {
     align-items: center;
 }
 
+#container-attemps {
+    font-size: 1.4em;
+    background-color: red;
+    margin-right: 1em;
+    padding: 0.5em;
+    border-radius: 8px;
+}
+
 #container {
     background-color: red;
     width: 35%;
@@ -44,7 +52,7 @@ body {
     /* background-color: red; */
 }
 
-.container-content input {
+#inputNumber {
     margin: 0 3em;
     padding: 0.6em;
     width: 35%;
@@ -53,9 +61,14 @@ body {
     outline: none;
 }
 
-.container-content button {
+#btnCheck,
+#btnReset {
     border: none;
     border-radius: 8px;
     outline: none;
     padding: 1em;
+}
+
+#btnReset {
+    display: none;
 }
