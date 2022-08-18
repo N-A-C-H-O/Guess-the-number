@@ -12,7 +12,7 @@ inputNumber.focus();
 
 function resetGame(e) {
     e.preventDefault();
-    randomNumber = getRndInteger(1,10);
+    randomNumber = getRndInteger(1,100);
     attempts = 10;
     displayAttemps.innerHTML = attempts;
     inputNumber.style.display = 'inline';
@@ -27,7 +27,11 @@ btnReset.addEventListener('click',resetGame);
 btnCheck.addEventListener('click',(e) => {
     e.preventDefault();
     if (inputNumber.value == randomNumber) {
-        alert('Correcto');
+        Swal.fire({
+            icon: 'success',
+            title: 'Correcto! 🏆',
+            text: 'Wow! lo haces bien! 👏',
+        });
         inputNumber.style.display = 'none';
         title.style.display = 'none';
         btnCheck.style.display = 'none';
@@ -36,16 +40,28 @@ btnCheck.addEventListener('click',(e) => {
     }
     else if (inputNumber.value != randomNumber) {
         if (inputNumber.value > randomNumber) {
-            alert('Fallaste, tu número es más grande');
+            Swal.fire({
+                icon: 'error',
+                title: 'Te pasaste! 😁',
+                text: 'Prueba ingresando un número más pequeño',
+            });
         }
         else {
-            alert('Fallaste, tu número es más chico');
+            Swal.fire({
+                icon: 'error',
+                title: 'Te falta! 😁',
+                text: 'Prueba ingresando un número más grande',
+            });
         }
     }
     attempts--;
     displayAttemps.innerHTML = attempts;
     if (attempts < 1) {
-        alert('No tienes más intentos');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No tienes más intentos! 😕',
+        })
         inputNumber.style.display = 'none';
         title.style.display = 'none';
         btnCheck.style.display = 'none';
